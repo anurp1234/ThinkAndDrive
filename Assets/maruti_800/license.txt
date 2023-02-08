@@ -1,0 +1,11 @@
+Model Information:
+* title:	Maruti 800
+* source:	https://sketchfab.com/3d-models/maruti-800-f9cf3f22dcbb49be946974df5bd94856
+* author:	Gouravsuthar (https://sketchfab.com/Gouravsuthar)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Maruti 800" (https://sketchfab.com/3d-models/maruti-800-f9cf3f22dcbb49be946974df5bd94856) by Gouravsuthar (https://sketchfab.com/Gouravsuthar) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

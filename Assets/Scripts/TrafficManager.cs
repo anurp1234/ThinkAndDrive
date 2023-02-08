@@ -9,7 +9,7 @@ public class TrafficManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnCars(4);
+        SpawnCars(5);
     }
 
     // Update is called once per frame
@@ -24,11 +24,10 @@ public class TrafficManager : MonoBehaviour
         for (int i = 0; i < NumberofCars; i++)
         {
 
-            Waypoint CurrentSpawnPoint = CarSpawnPoint[Random.Range(0, SpawnCount)];
-            Vector3 SpawnPointPos = CurrentSpawnPoint.transform.position;
+            Waypoint spawnpoint = CarSpawnPoint[Random.Range(0, SpawnCount)];
+            Vector3 SpawnPointPos = spawnpoint.transform.position;
             CarAiCode car = Instantiate(AiCarList[Random.Range(0, Length)],SpawnPointPos,Quaternion.identity);
-            car.NextWaypoint = CurrentSpawnPoint;
-
+            car.NextWaypoint = spawnpoint;
         }
        
     }
