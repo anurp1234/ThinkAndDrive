@@ -6,10 +6,12 @@ public class TrafficManager : MonoBehaviour
 {
     public List<CarAiCode> AiCarList;
     public List<Waypoint> CarSpawnPoint;
+    public float minSpeed = 10;
+    public float maxSpeed = 20;
     // Start is called before the first frame update
     void Start()
     {
-        SpawnCars(5);
+        SpawnCars(50);
     }
 
     // Update is called once per frame
@@ -27,7 +29,9 @@ public class TrafficManager : MonoBehaviour
             Waypoint spawnpoint = CarSpawnPoint[Random.Range(0, SpawnCount)];
             Vector3 SpawnPointPos = spawnpoint.transform.position;
             CarAiCode car = Instantiate(AiCarList[Random.Range(0, Length)],SpawnPointPos,Quaternion.identity);
+            car.speed = Random.Range(minSpeed, maxSpeed);
             car.NextWaypoint = spawnpoint;
+            car.trafficManager = this;
         }
        
     }

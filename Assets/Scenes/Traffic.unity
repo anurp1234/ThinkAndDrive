@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 110447561}
   - component: {fileID: 110447560}
   - component: {fileID: 110447559}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (3)
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 228607511}
   - component: {fileID: 228607510}
   - component: {fileID: 228607509}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CubeR2
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 316451784}
   - component: {fileID: 316451783}
   - component: {fileID: 316451782}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CubeR3
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -1943,7 +1943,7 @@ GameObject:
   - component: {fileID: 462293032}
   - component: {fileID: 462293031}
   - component: {fileID: 462293030}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CubeR5
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -3127,7 +3127,7 @@ GameObject:
   - component: {fileID: 804922039}
   - component: {fileID: 804922038}
   - component: {fileID: 804922037}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -3943,7 +3943,7 @@ GameObject:
   - component: {fileID: 1099079398}
   - component: {fileID: 1099079397}
   - component: {fileID: 1099079396}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (4)
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -4055,7 +4055,7 @@ GameObject:
   - component: {fileID: 1103985288}
   - component: {fileID: 1103985287}
   - component: {fileID: 1103985286}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (2)
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -4167,7 +4167,7 @@ GameObject:
   - component: {fileID: 1121288580}
   - component: {fileID: 1121288579}
   - component: {fileID: 1121288578}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (5)
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -5576,7 +5576,7 @@ GameObject:
   - component: {fileID: 1680125613}
   - component: {fileID: 1680125612}
   - component: {fileID: 1680125611}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CubeR4
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -5688,7 +5688,7 @@ GameObject:
   - component: {fileID: 1711583407}
   - component: {fileID: 1711583406}
   - component: {fileID: 1711583405}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CubeR1
   m_TagString: Waypoint
   m_Icon: {fileID: 0}
@@ -6543,6 +6543,8 @@ MonoBehaviour:
   - {fileID: 316451782}
   - {fileID: 1680125611}
   - {fileID: 462293030}
+  minSpeed: 5
+  maxSpeed: 30
 --- !u!4 &1965169690
 Transform:
   m_ObjectHideFlags: 0
