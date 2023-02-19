@@ -6,12 +6,13 @@ public class TrafficManager : MonoBehaviour
 {
     public List<CarAiCode> AiCarList;
     public List<Waypoint> CarSpawnPoint;
+    public int numberOfCars = 50;
     public float minSpeed = 10;
     public float maxSpeed = 20;
     // Start is called before the first frame update
     void Start()
     {
-        SpawnCars(50);
+        SpawnCars(numberOfCars);
     }
 
     // Update is called once per frame

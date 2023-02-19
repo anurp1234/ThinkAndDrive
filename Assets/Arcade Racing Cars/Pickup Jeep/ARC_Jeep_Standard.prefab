@@ -156,7 +156,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.95, y: 1.9, z: 1}
+  m_Size: {x: 3.5112915, y: 1.9, z: 1}
   m_Center: {x: 0, y: 0.95, z: -0.05}
 --- !u!114 &6943190896479807328
 MonoBehaviour:
@@ -173,10 +173,10 @@ MonoBehaviour:
   NextWaypoint: {fileID: 0}
   speed: 10
   totalRotationTime: 3
-  rotationTimer: 0
-  AiCar: {fileID: 2858687659604695809}
   nextWaypointTransform: {fileID: 0}
   distanceToTriggerRotation: 2
+  rayCastPoint: {fileID: 0}
+  trafficManager: {fileID: 0}
 --- !u!1 &2571285272410085932
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class CarAiCode : MonoBehaviour
     public float distanceToTriggerRotation = 2;
 
     public Transform rayCastPoint;
-    private float acceleration;
+    private float acceleration = 1f;
 
     public TrafficManager trafficManager;
 
@@ -26,8 +26,17 @@ public class CarAiCode : MonoBehaviour
         NextWaypoint = NextWaypoint.ConnectedWaypoints[0];
         currentDirection = NextWaypoint.transform.position - transform.position;
         currentDirection.Normalize();
+
+        if (speed >= 20f && acceleration > 1f)
+            acceleration = 0.6f;
+        else if (speed >= 8f && acceleration > 1f)
+            acceleration = 0.9f;
+        else
+            acceleration = 1f;
+
         transform.LookAt(NextWaypoint.transform);
-       // Debug.LogWarning("x = "+currentDirection.x+" y = "+ currentDirection.y +" z = "+currentDirection.z);
+        
+        Debug.LogWarning("x = "+currentDirection.x+" y = "+ currentDirection.y +" z = "+currentDirection.z);
     }
    
     void Start()
@@ -39,7 +48,7 @@ public class CarAiCode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(currentDirection * Time.deltaTime * speed, Space.World);
+        // transform.Translate(currentDirection * Time.deltaTime * speed, Space.World);
 
         RaycastHit hitInfo;
 
@@ -48,19 +57,30 @@ public class CarAiCode : MonoBehaviour
         int layerMask = 1 << LayerMask.NameToLayer("Ignore Raycast");
         if (Physics.Raycast(ray, out hitInfo, 20, ~layerMask))
         {
-            acceleration = 0.1f;
-            Debug.LogWarning("Hit this "+hitInfo.transform.name);
+            if (hitInfo.collider.gameObject != gameObject)
+            {
+                if (speed >= 20f)
+                    acceleration = -1f;
+                else if (speed >= 10f)
+                    acceleration = 0.2f;
+                else
+                    acceleration = 0.3f;
+
+                speed = Math.Clamp(speed, 0.01f, trafficManager.maxSpeed);
+            }
         }
         else
         {
             acceleration = 1.5f;
+            speed = Math.Clamp(speed, trafficManager.minSpeed, trafficManager.maxSpeed);
         }
 
         speed = speed + speed * (acceleration - 1) * Time.deltaTime;
 
-        speed = Math.Clamp(speed, trafficManager.minSpeed, trafficManager.maxSpeed);
+        // speed = Math.Clamp(speed, trafficManager.minSpeed, trafficManager.maxSpeed);
+        transform.Translate(currentDirection * Time.deltaTime * speed, Space.World);
 
-        
+
         // Debug.Log(NextWaypoint.transform.position);
         return;
         float distanceToTarget = Vector3.Distance(NextWaypoint.transform.position, this.transform.position);
@@ -78,7 +98,7 @@ public class CarAiCode : MonoBehaviour
             Debug.LogWarning(rotationTimer);
             rotationTimer += Time.deltaTime;
             transform.forward = Vector3.Slerp(transform.forward, targetForward, rotationTimer / totalRotationTime);
-           
+
             if (rotationTimer > totalRotationTime)
             {
                 rotationTimer = 0;
