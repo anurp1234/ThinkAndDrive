@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrafficManager : MonoBehaviour
 {
-    public List<CarAiCode> AiCarList;
+    public List<VehicleAI> AIVehicleList;
     public List<Waypoint> CarSpawnPoint;
     public int numberOfCars = 50;
     public float minSpeed = 10;
@@ -22,16 +22,16 @@ public class TrafficManager : MonoBehaviour
     }
     void SpawnCars(int NumberofCars)
     {
-        int Length = AiCarList.Count;
+        int Length = AIVehicleList.Count;
         int SpawnCount = CarSpawnPoint.Count;
         for (int i = 0; i < NumberofCars; i++)
         {
 
             Waypoint spawnpoint = CarSpawnPoint[Random.Range(0, SpawnCount)];
             Vector3 SpawnPointPos = spawnpoint.transform.position;
-            CarAiCode car = Instantiate(AiCarList[Random.Range(0, Length)],SpawnPointPos,Quaternion.identity);
-            car.speed = Random.Range(minSpeed, maxSpeed);
-            car.NextWaypoint = spawnpoint;
+            VehicleAI car = Instantiate(AIVehicleList[Random.Range(0, Length)],SpawnPointPos,Quaternion.identity);
+            //car.speed = Random.Range(minSpeed, maxSpeed);
+            car.nextWaypoint = spawnpoint;
             car.trafficManager = this;
         }
        

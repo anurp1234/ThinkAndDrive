@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4611081407219070}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: FRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,8 @@ GameObject:
   - component: {fileID: 3426719423971619684}
   - component: {fileID: 482899087365385336}
   - component: {fileID: -7196301957124406864}
-  m_Layer: 9
+  - component: {fileID: 5144061900861446715}
+  m_Layer: 3
   m_Name: Car01
   m_TagString: AiCar
   m_Icon: {fileID: 0}
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366243911189104}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43159ff08f77dfe4aaec23164c8d37ef, type: 3}
   m_Name: 
@@ -98,11 +99,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366243911189104}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3575, y: 1.03, z: 3.4}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.2207885, y: 0.9595302, z: 2.806653}
+  m_Center: {x: 0, y: 0.24694136, z: -0.04033804}
 --- !u!54 &-7196301957124406864
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117,8 +118,32 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &5144061900861446715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366243911189104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3de04fa9d1d7f43a09d1609ed5297f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficManager: {fileID: 0}
+  maxSpeed: 10
+  acceleration: 8
+  deceleration: 15
+  brakingDistance: 15
+  turnSpeed: 4
+  turnRadius: 3
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  nextWaypoint: {fileID: 0}
+  currentSpeed: 0
 --- !u!1 &1432677206926066
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4254855883281196}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: FLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4218254353713332}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: BLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4385599746178966}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: BRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4960957718180336}
-  m_Layer: 10
+  m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,6 +283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheel01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -301,6 +330,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
@@ -320,6 +353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheel01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -363,6 +400,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
@@ -382,6 +423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheel01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -426,6 +471,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
 --- !u!4 &6149848856968171512 stripped
@@ -443,6 +492,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
       propertyPath: m_Name
       value: Wheel01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
       propertyPath: m_RootOrder
@@ -487,6 +540,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee0bb8960b2b94c55ad6df393c84a17c, type: 3}
@@ -506,6 +563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -549,6 +610,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57d23153e8a364f379241122438b5cc2, type: 3}

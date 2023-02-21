@@ -22,8 +22,8 @@ public class Waypoint : MonoBehaviour
     {
         if (other.gameObject.tag == "AiCar")
         {
-            CarAiCode car = other.gameObject.GetComponent<CarAiCode>();
-            car.OnReachedNextWayPoint();
+            //CarAiCode car = other.gameObject.GetComponent<CarAiCode>();
+            //car.OnReachedNextWayPoint();
         }
     }
 }
