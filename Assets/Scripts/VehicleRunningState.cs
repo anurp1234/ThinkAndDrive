@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VehicleAI : MonoBehaviour
+public class VehicleRunningState : IState
 {
     public TrafficManager trafficManager;
 
@@ -22,12 +22,29 @@ public class VehicleAI : MonoBehaviour
     private bool turning; // Whether the vehicle is currently turning
     private Vector3 turnPoint; // The point where the vehicle is turning
 
-    void Start()
+    private GameObject currentObject;
+    private Transform transform;
+
+    void IState.DestroyState()
     {
-        rb = GetComponent<Rigidbody>();
-        transform.LookAt(nextWaypoint.transform);
-        currentSpeed = 0f;
-        turning = false;
+        return;
+    }
+
+    void IState.SetupState()
+    {
+        return;
+
+    }
+
+    void IState.UpdateState()
+    {
+        return;
+    }
+
+    public VehicleRunningState(GameObject currentObject)
+    {
+        this.currentObject = currentObject;
+        transform = currentObject.transform;
     }
 
     void FixedUpdate()
@@ -95,4 +112,3 @@ public class VehicleAI : MonoBehaviour
         //Vector3 waypointDirection = nextWaypoint.transform.position - transform.position;
     }
 }
-

@@ -63,6 +63,9 @@
     <Compile Include="Assets\Arcade Racing Cars\Pickup Jeep\Demo\Scripts\DemoCarController.cs" />
     <Compile Include="Assets\Scripts\Waypoint.cs" />
     <Compile Include="Assets\Scripts\DifferenceVector.cs" />
+    <Compile Include="Assets\Scripts\FSM.cs" />
+    <Compile Include="Assets\Scripts\IState.cs" />
+    <Compile Include="Assets\Scripts\VehicleRunningState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Arcade Racing Cars\Pickup Jeep\Demo\Readme.txt" />

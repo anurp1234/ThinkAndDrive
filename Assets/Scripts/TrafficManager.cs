@@ -9,6 +9,9 @@ public class TrafficManager : MonoBehaviour
     public int numberOfCars = 50;
     public float minSpeed = 10;
     public float maxSpeed = 20;
+
+    public FSM fsm;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +33,13 @@ public class TrafficManager : MonoBehaviour
             Waypoint spawnpoint = CarSpawnPoint[Random.Range(0, SpawnCount)];
             Vector3 SpawnPointPos = spawnpoint.transform.position;
             VehicleAI car = Instantiate(AIVehicleList[Random.Range(0, Length)],SpawnPointPos,Quaternion.identity);
+            
             //car.speed = Random.Range(minSpeed, maxSpeed);
             car.nextWaypoint = spawnpoint;
             car.trafficManager = this;
+
+            IState state = new VehicleRunningState(car.gameObject);
+            fsm.Push(state);
         }
        
     }
