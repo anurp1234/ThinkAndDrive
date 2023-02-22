@@ -54,14 +54,14 @@ public class VehicleAI : MonoBehaviour
         {
             if (currentSpeed > 0)
             {
-                currentSpeed -= deceleration * Time.fixedDeltaTime;
+                Brake(deceleration);
             }
         }
-        else if (currentSpeed < maxSpeed)
+        else if (currentSpeed <= maxSpeed)
         {
-            if (turning)
+            if (turning && currentSpeed > 0)
             {
-                currentSpeed -= deceleration * Time.fixedDeltaTime;
+                Brake(deceleration / 2f);
             }
             else
             {
@@ -74,23 +74,16 @@ public class VehicleAI : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(newDirection);
 
         // Move the car forward
+        currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxSpeed);
         Vector3 velocity = transform.forward * currentSpeed;
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
 
         turning = false;
     }
 
-    // Start turning at the given point
-    public void Turn(Vector3 point)
+    public void Brake(float decelerationValue)
     {
-        turning = true;
-        turnPoint = point;
-    }
-
-    // Stop turning
-    public void StopTurning()
-    {
-        turning = false;
+        currentSpeed -= decelerationValue * Time.fixedDeltaTime;
     }
 
     public void OnReachedNextWayPoint()
