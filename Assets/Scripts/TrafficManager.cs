@@ -33,12 +33,12 @@ public class TrafficManager : MonoBehaviour
             Waypoint spawnpoint = CarSpawnPoint[Random.Range(0, SpawnCount)];
             Vector3 SpawnPointPos = spawnpoint.transform.position;
             VehicleAI car = Instantiate(AIVehicleList[Random.Range(0, Length)],SpawnPointPos,Quaternion.identity);
-            
-            //car.speed = Random.Range(minSpeed, maxSpeed);
+
+            float maxSpeed = Random.Range(8f, 20f);
             car.nextWaypoint = spawnpoint;
             car.trafficManager = this;
 
-            IState state = new VehicleRunningState(car.gameObject);
+            IState state = new VehicleRunningState(car.gameObject, spawnpoint, maxSpeed);
             fsm.Push(state);
         }
        

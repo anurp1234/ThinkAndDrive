@@ -6,12 +6,12 @@ public class VehicleRunningState : IState
 {
     public TrafficManager trafficManager;
 
-    public float maxSpeed = 10f; // The maximum speed of the vehicle
-    public float acceleration = 1f; // The acceleration of the vehicle
-    public float deceleration = 2f; // The deceleration of the vehicle
-    public float brakingDistance = 20f; // The distance to start decelerating the vehicle
-    public float turnSpeed = 5f; // The turning speed of the vehicle
-    public float turnRadius = 10f; // The turning radius of the vehicle
+    public float maxSpeed; // The maximum speed of the vehicle
+    public float acceleration = 10f; // The acceleration of the vehicle
+    public float deceleration = 18f; // The deceleration of the vehicle
+    public float brakingDistance = 15f; // The distance to start decelerating the vehicle
+    public float turnSpeed = 4f; // The turning speed of the vehicle
+    public float turnRadius = 3f; // The turning radius of the vehicle
     public LayerMask obstacleLayer; // The layer mask for detecting obstacles
     public Waypoint nextWaypoint; // The target waypoint for the vehicle
     public float minBrakingRate = 1f;
@@ -33,21 +33,9 @@ public class VehicleRunningState : IState
     void IState.SetupState()
     {
         return;
-
     }
 
     void IState.UpdateState()
-    {
-        return;
-    }
-
-    public VehicleRunningState(GameObject currentObject)
-    {
-        this.currentObject = currentObject;
-        transform = currentObject.transform;
-    }
-
-    void FixedUpdate()
     {
         if (nextWaypoint == null)
         {
@@ -111,4 +99,15 @@ public class VehicleRunningState : IState
         nextWaypoint = nextWaypoint.ConnectedWaypoints[0];
         //Vector3 waypointDirection = nextWaypoint.transform.position - transform.position;
     }
+
+    public VehicleRunningState(GameObject currentObject, Waypoint spawnPoint, float maxSpeed)
+    {
+        this.currentObject = currentObject;
+        transform = currentObject.transform;
+        nextWaypoint = spawnPoint;
+        rb = currentObject.GetComponent<Rigidbody>();
+        obstacleLayer = LayerMask.GetMask("Vehicle");
+        this.maxSpeed = maxSpeed;
+    }
+
 }

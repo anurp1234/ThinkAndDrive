@@ -185,7 +185,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294574470158166290}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f3de04fa9d1d7f43a09d1609ed5297f, type: 3}
   m_Name: 
@@ -201,6 +201,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   nextWaypoint: {fileID: 0}
+  minBrakingRate: 1
+  maxBrakingRate: 5
   currentSpeed: 0
 --- !u!1 &2571285272410085932
 GameObject:

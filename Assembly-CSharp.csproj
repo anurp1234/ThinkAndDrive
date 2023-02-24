@@ -56,16 +56,16 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\FSM.cs" />
+    <Compile Include="Assets\Scripts\VehicleRunningState.cs" />
     <Compile Include="Assets\Scripts\VehicleAI.cs" />
     <Compile Include="Assets\Scripts\FsmLearning.cs" />
     <Compile Include="Assets\Scripts\CarAiCode.cs" />
     <Compile Include="Assets\Scripts\TrafficManager.cs" />
+    <Compile Include="Assets\Scripts\IState.cs" />
     <Compile Include="Assets\Arcade Racing Cars\Pickup Jeep\Demo\Scripts\DemoCarController.cs" />
     <Compile Include="Assets\Scripts\Waypoint.cs" />
     <Compile Include="Assets\Scripts\DifferenceVector.cs" />
-    <Compile Include="Assets\Scripts\FSM.cs" />
-    <Compile Include="Assets\Scripts\IState.cs" />
-    <Compile Include="Assets\Scripts\VehicleRunningState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Arcade Racing Cars\Pickup Jeep\Demo\Readme.txt" />
